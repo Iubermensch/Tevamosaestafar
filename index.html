@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>tevamosaestafar.com</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: orange; }
+    .contenedor { width: 100%; max-width: 1000px; margin: auto; }
+    .encabezado { background-color: #f05a00; color: black; font-weight: bold; font-size: 2em; padding: 10px; text-align: center; }
+    .contenido, .final { display: flex; width: 100%; }
+    .izquierda, .derecha {
+      flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .izquierda {
+      background: yellow;
+      background-image: url('https://i.imgur.com/qL8b59L.png');
+      background-size: contain;
+    }
+    .izquierda h1 { font-size: 2.5em; margin-bottom: 20px; }
+    .derecha {
+      background: #74b9ff;
+    }
+    label { font-weight: bold; margin-top: 10px; }
+    input {
+      margin-bottom: 10px; padding: 8px; border: none; width: 90%;
+    }
+    button {
+      background-color: #f9ca24;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .final {
+      display: none;
+      flex-direction: column;
+      background: yellow;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+    .final h1 { font-size: 2.5em; }
+    .notificacion {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #f5f6fa;
+      padding: 10px;
+      font-size: 0.9em;
+      border: 1px solid #ccc;
+    }
+    .emoji {
+      font-size: 5em;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="encabezado">tevamosaestafar.com</div>
+
+    <div class="contenido" id="formulario">
+      <div class="izquierda">
+        <h1>FELIZ CUMPLEAÑOS<br>ALEXIS :D</h1>
+      </div>
+
+      <div class="derecha">
+        <form onsubmit="mostrarFinal(event)">
+          <p style="font-weight: bold;">Ingresa tus datos para reclamar tu regalo 😜</p>
+
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Ejem. Alexis Giovanni, Sánchez...">
+
+          <label>Dirección de domicilio</label>
+          <input type="text" placeholder="Ejem. Av. Cart. J.N.G, Tula, T...">
+
+          <label>Tarjeta de crédito o débito</label>
+          <input type="text" placeholder="Ingresa el número de tu tarjeta">
+          <input type="text" placeholder="Ingresa los (4) dígitos en el reverso de tu tarjeta">
+
+          <label>Ingresa tu CURP o tu Clave de Elector</label>
+          <input type="text" placeholder="Ejem. SARA080730XTSNMLR2">
+
+          <button type="submit">LISTO</button>
+          <p style="font-size: 0.7em; margin-top: 5px;">*solo rellena los formularios, no ingreses tus datos reales, pendejo</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="final" id="final">
+      <div class="notificacion">Se ha detectado un archivo sospechoso en el sistema.</div>
+      <h1>¡¡¡FELICIDADES, LO LOGRASTE!!!</h1>
+      <div class="emoji">😏🎁</div>
+      <h2>Disfruta de tu regalo 🥰</h2>
+    </div>
+  </div>
+
+  <script>
+    function mostrarFinal(e) {
+      e.preventDefault();
+      document.getElementById("formulario").style.display = "none";
+      document.getElementById("final").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>
